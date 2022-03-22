@@ -17,8 +17,11 @@ describe('Teste o componente <FavoritePokemons.js />', () => {
     const pikachu = pokemons.find((pokemon) => pokemon.name === 'Pikachu');
     const charmander = pokemons.find((pokemon) => pokemon.name === 'Charmander');
     const pokeArray = [pikachu, charmander];
+
     renderWithRouter(<FavoritePokemons pokemons={ pokeArray } />);
+
     const favPkm = screen.getAllByTestId(/pokemon-name/i);
+
     expect(favPkm[0]).toHaveTextContent(/pikachu/i);
     expect(favPkm[1]).toHaveTextContent(/charmander/i);
   });
